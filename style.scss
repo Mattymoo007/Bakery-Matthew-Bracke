@@ -1,0 +1,29 @@
+.flex {
+  display: flex;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80vw;
+}
+
+header {
+  height: 100vh;
+  background: url("../img/bread.jpg") no-repeat;
+  background-size: contain;
+}
+
+nav {
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  .container {
+    height: 100%;
+    justify-content: space-between;
+  }
+  img {
+    height: 80%;
+  }
+  ul {
+    list-style: none;
+  }
+}
