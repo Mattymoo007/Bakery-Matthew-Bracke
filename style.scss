@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Alegreya:400,500,700,800,900|Montserrat:300,400,500,700|Playfair+Display:400,700,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Alex+Brush&display=swap");
+
+$darkgrey: rgb(51, 51, 51);
 
 body {
   font-family: "Alegreya", serif;
@@ -19,6 +22,10 @@ p {
 
 .flex {
   display: flex;
+}
+
+.grid {
+  display: grid;
 }
 
 .container {
@@ -56,20 +63,20 @@ header {
         @include alegreya;
         margin: 0 20px;
         a {
-          color: white;
+          color: rgb(243, 243, 243);
           text-decoration: none;
         }
       }
     }
     .social {
       i {
-        color: white;
+        color: rgb(243, 243, 243);
         margin-left: 20px;
       }
     }
   }
   .intro {
-    height: 80%;
+    height: 82%;
     color: white;
     text-align: center;
     flex-direction: column;
@@ -82,24 +89,116 @@ header {
       margin-bottom: 20px;
     }
     img {
-      padding: 20px 0;
+      padding: 30px 0;
     }
     p {
       font-size: 1.2em;
       letter-spacing: 2px;
-      margin-bottom: 40px;
+      margin-bottom: 60px;
       text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
     }
-    button {
+    a {
       @include alegreya;
-      width: 150px;
-      padding: 15px 20px;
+      width: 180px;
+      padding: 20px;
       background-color: rgba(0, 0, 0, 0.5);
       border: 1px dashed rgba(255, 255, 255, 0.5);
       color: white;
       text-transform: uppercase;
       letter-spacing: 2px;
       font-size: 0.9em;
+      text-decoration: none;
+      &:active {
+        transform: scale(0.95, 0.87);
+      }
+    }
+  }
+}
+
+section.art {
+  background-color: white;
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+  margin-top: 10px;
+  padding-top: 50px;
+  .container-2 {
+    width: 70vw;
+    margin: 0 auto;
+    .copy {
+      flex-basis: 50%;
+      text-align: center;
+      padding: 0 40px;
+      h2 {
+        margin: 0;
+        font-size: 3em;
+        color: $darkgrey;
+      }
+      h3 {
+        font-size: 1.5em;
+        color: $darkgrey;
+      }
+      p {
+        margin-bottom: 40px;
+      }
+      h4 {
+        @include alegreya;
+        text-transform: uppercase;
+        color: brown;
+        letter-spacing: 1px;
+        margin: 5px 0 40px 0;
+      }
+      .cook {
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        img {
+          margin: 0 20px;
+        }
+        h3 {
+          padding: 15px;
+          border: 1px solid $darkgrey;
+          border-width: 1px 0;
+          font-weight: 200;
+        }
+      }
+      .quote {
+        margin-top: 20px;
+        p {
+          font-family: "Alex Brush", cursive;
+          font-size: 2.2em;
+          color: brown;
+          margin: 0;
+          width: 90%;
+          margin: 0 auto;
+        }
+        img {
+          display: block;
+        }
+        .flip {
+          transform: scale(-1, 1);
+          float: right;
+        }
+      }
+    }
+    .photos {
+      grid-template: 1fr 1fr / 1fr 1fr;
+      grid-gap: 20px;
+      align-content: center;
+      position: relative;
+      .stamp {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .photo {
+        img {
+          outline: 4px solid white;
+          outline-offset: -11px;
+          object-fit: cover;
+          width: 100%;
+          max-height: 100%;
+        }
+      }
     }
   }
 }
