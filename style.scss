@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Alex+Brush&display=swap");
 
 $darkgrey: rgb(51, 51, 51);
-$gold: #ffdc84;
+$gold: #ffc862;
 
 body {
   font-family: "Alegreya", serif;
@@ -405,8 +405,11 @@ section.breakfast {
       margin-bottom: 30px;
     }
     a {
+      display: inline-block;
+      width: 40%;
       border: 1px solid $darkgrey;
-      padding: 10px 60px;
+      padding: 10px;
+      margin-bottom: 50px;
       color: goldenrod;
       text-decoration: none;
       font-weight: bold;
@@ -417,6 +420,7 @@ section.breakfast {
 
 section.sandwich {
   text-align: center;
+  background-color: #f3eee8;
   .farm {
     background: url("../img/Vektor-Smartobjekt.png") no-repeat;
     background-position: bottom center;
@@ -425,21 +429,78 @@ section.sandwich {
     h2 {
     }
   }
+  .ingridients {
+    flex: 35%;
+    padding: 0 80px 0 0;
+    h3 {
+      color:goldenrod;
+      margin: 10px 0;
+    }
+    p {
+      margin-bottom: 50px;
+    }
+  }
+  .photo {
+    flex: 65%;
+    background: url("../img/Ebene 11.png") no-repeat;
+    background-size: contain;
+    background-position: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    .prep {
+      margin-right: 5px;
+      .mini-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 145px;
+        height: 145px;
+        background-color: rgba(255, 255, 255, 0.8);
+        margin: 3px;
+        border-radius: 2px;
+        &:nth-child(3) {
+          background-color: rgba(255, 255, 255, 0.9);
+          h2 {
+            color: $gold;
+            font-size: 4em;
+          }
+        }
+        h4 {
+          margin: 0;
+        }
+      }
+    }
+  }
 }
 
 footer {
-  ul {
-    padding: 0;
-    list-style: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.9em;
-    li {
-      @include alegreya;
-      margin: 0 20px;
-      a {
-        color: $darkgrey;
-        text-decoration: none;
+  background-color: #f3eee8;
+  padding: 30px 0;
+  .container {
+    align-items: center;
+    justify-content: space-between;
+    a {
+      display: block;
+      img {
+        width: 150px;
+      }
+    }
+    ul {
+      padding: 0;
+      list-style: none;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.9em;
+      border-top: 1px solid $darkgrey;
+      border-bottom: 1px solid $darkgrey;
+      padding: 20px 0;
+      li {
+        @include alegreya;
+        margin: 0 20px;
+        a {
+          color: $darkgrey;
+          text-decoration: none;
+        }
       }
     }
   }
