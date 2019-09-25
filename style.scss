@@ -9,15 +9,39 @@ body {
 
 @mixin alegreya {
   font-family: "Alegreya", serif;
-  transform: scale(1, 0.95);
+  transform: scale(1, 0.9);
 }
 
 h1 {
   font-family: "Playfair Display", serif;
 }
 
+h2 {
+  margin: 0;
+  font-size: 3em;
+  color: $darkgrey;
+}
+h3 {
+  font-size: 1.5em;
+  color: $darkgrey;
+}
+
+h4 {
+  @include alegreya;
+  text-transform: uppercase;
+  color: brown;
+  letter-spacing: 1.2px;
+  margin: 7px 0 50px 0;
+  font-size: 0.9em;
+}
+
 p {
   font-family: "Montserrat", sans-serif;
+  font-size: 0.85em;
+  line-height: 1.5em;
+  letter-spacing: 1.5px;
+  color: $darkgrey;
+  font-weight: 500;
 }
 
 .flex {
@@ -33,9 +57,15 @@ p {
   width: 80vw;
 }
 
+.container-2 {
+  width: 70vw;
+  margin: 0 auto;
+}
+
 header {
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.3)), url("../img/background-image.png") no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.3)),
+    url("../img/background-image.png") no-repeat;
   background-size: cover;
   nav {
     height: 75px;
@@ -76,12 +106,13 @@ header {
     }
   }
   .intro {
-    height: 82%;
+    height: 75%;
     color: white;
     text-align: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
     h1 {
       font-size: 5em;
       letter-spacing: 5px;
@@ -92,6 +123,7 @@ header {
       padding: 30px 0;
     }
     p {
+      color: white;
       font-size: 1.2em;
       letter-spacing: 2px;
       margin-bottom: 60px;
@@ -112,39 +144,27 @@ header {
         transform: scale(0.95, 0.87);
       }
     }
+    .bread {
+      position: absolute;
+      bottom: -190px;
+    }
   }
 }
 
 section.art {
   background-color: white;
   background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
-  margin-top: 10px;
-  padding-top: 50px;
+  margin: 10px 0 0 0;
+  padding: 70px 0 90px 0;
   .container-2 {
     width: 70vw;
     margin: 0 auto;
     .copy {
-      flex-basis: 50%;
+      flex: 1 1 50%;
       text-align: center;
       padding: 0 40px;
-      h2 {
-        margin: 0;
-        font-size: 3em;
-        color: $darkgrey;
-      }
-      h3 {
-        font-size: 1.5em;
-        color: $darkgrey;
-      }
       p {
         margin-bottom: 40px;
-      }
-      h4 {
-        @include alegreya;
-        text-transform: uppercase;
-        color: brown;
-        letter-spacing: 1px;
-        margin: 5px 0 40px 0;
       }
       .cook {
         justify-content: center;
@@ -184,11 +204,24 @@ section.art {
       grid-gap: 20px;
       align-content: center;
       position: relative;
+      padding: 70px 20px;
+      flex: 0 0 50%;
       .stamp {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        h2 {
+          position: absolute;
+          top: 40%;
+          left: 50%;
+          transform: translate(-50%);
+          text-align: center;
+          font-size: 1.8em;
+          letter-spacing: 1px;
+          font-weight: 200;
+          color: #daa520b0;
+        }
       }
       .photo {
         img {
@@ -196,8 +229,31 @@ section.art {
           outline-offset: -11px;
           object-fit: cover;
           width: 100%;
-          max-height: 100%;
+          height: 100%;
         }
+      }
+    }
+  }
+}
+
+section.recipe {
+  background: url("../img/background-image-2.png") no-repeat;
+  background-size: cover;
+  align-items: center;
+  .card {
+    grid-template: 1fr / 4fr 5fr 1fr;
+    background-color: #fff;
+    margin: 100px 0;
+    box-shadow: 0px 5px 31px 0px rgba(0,0,0,0.75);
+    .photo {
+      background: url("../img/pancakes.jpg") no-repeat;
+      background-size: cover;
+      flex-direction: column;
+      justify-content: center;
+      i {
+        font-size: 0.8em;
+        margin: 7px 30px;
+        color: rgba(255, 255, 255, 0.9);
       }
     }
   }
