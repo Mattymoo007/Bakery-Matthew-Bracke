@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Alex+Brush&display=swap");
 
 $darkgrey: rgb(51, 51, 51);
+$gold: #ffdc84;
 
 body {
   font-family: "Alegreya", serif;
@@ -20,10 +21,12 @@ h2 {
   margin: 0;
   font-size: 3em;
   color: $darkgrey;
+  letter-spacing: 1.5px;
 }
 h3 {
   font-size: 1.5em;
   color: $darkgrey;
+  letter-spacing: 1.5px;
 }
 
 h4 {
@@ -48,6 +51,12 @@ p {
   display: flex;
 }
 
+.center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .grid {
   display: grid;
 }
@@ -64,8 +73,7 @@ p {
 
 header {
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.3)),
-    url("../img/background-image.png") no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.3)), url("../img/background-image.png") no-repeat;
   background-size: cover;
   nav {
     height: 75px;
@@ -146,7 +154,7 @@ header {
     }
     .bread {
       position: absolute;
-      bottom: -190px;
+      bottom: -210px;
     }
   }
 }
@@ -220,7 +228,7 @@ section.art {
           font-size: 1.8em;
           letter-spacing: 1px;
           font-weight: 200;
-          color: #daa520b0;
+          color: $gold;
         }
       }
       .photo {
@@ -240,20 +248,198 @@ section.recipe {
   background: url("../img/background-image-2.png") no-repeat;
   background-size: cover;
   align-items: center;
+
   .card {
-    grid-template: 1fr / 4fr 5fr 1fr;
-    background-color: #fff;
-    margin: 100px 0;
-    box-shadow: 0px 5px 31px 0px rgba(0,0,0,0.75);
-    .photo {
-      background: url("../img/pancakes.jpg") no-repeat;
-      background-size: cover;
-      flex-direction: column;
+    grid-template: 1fr / 7fr 1fr;
+    margin: 130px 0 100px 0;
+    .shadow {
+      box-shadow: 0px 5px 31px 0px rgba(0, 0, 0, 0.75);
+      .photo {
+        background: url("../img/pancakes.jpg") no-repeat;
+        background-size: cover;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1 0 45%;
+        i {
+          font-size: 0.8em;
+          margin: 7px 30px;
+          color: rgba(255, 255, 255, 0.9);
+        }
+      }
+      .copy {
+        background: url("../img/Vektor-Smartobjekt\ windmill.png") no-repeat;
+        background-color: #fff;
+        background-position: right bottom;
+        background-size: 40% 70%;
+        padding: 60px 50px 40px;
+      }
+      .ingridients {
+        margin-top: 90px;
+        justify-content: space-between;
+        align-items: center;
+        .circle {
+          width: 30px;
+          height: 30px;
+          border: 1.5px solid black;
+          border-radius: 50%;
+          position: relative;
+          &:hover .arrow {
+            border-color: $gold;
+          }
+          &:hover {
+            border-color: $gold;
+          }
+          .arrow {
+            width: 0.5em;
+            height: 0.5em;
+            border-right: 0.1em solid black;
+            border-top: 0.1em solid black;
+            transform: rotate(45deg) translate(-1px, 1px);
+          }
+          .left {
+            transform: rotate(225deg) translate(-1px, 1px);
+          }
+        }
+      }
+    }
+    .time {
+      background-color: transparent;
+      position: relative;
+      .mini-card {
+        position: absolute;
+        left: calc(-165px / 2);
+        top: -40px;
+        width: 165px;
+        height: 165px;
+        box-shadow: 0px 5px 31px 0px rgba(0, 0, 0, 0.75);
+        text-align: center;
+        background: url("../img/Vektor-Smartobjekt.png") #fff no-repeat;
+        background-size: 300%;
+        background-position: left bottom;
+        h1 {
+          color: $gold;
+          font-size: 4em;
+          margin: 0;
+        }
+        h4 {
+          margin: 20px 0 0 0;
+          &:nth-child(1) {
+            color: $gold;
+            font-size: 1.1em;
+          }
+          &:nth-last-child(1) {
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+section.breakfast {
+  background: linear-gradient(rgba(0, 0, 0, 0.2)), url("../img/background-image-3.png") no-repeat;
+  background-size: cover;
+  padding: 70px 0;
+  .menu {
+    flex: 1 1 60%;
+    text-align: center;
+    h2,
+    h3 {
+      color: white;
+      margin: 0;
+    }
+    h3 {
+      font-size: 1.5em;
+    }
+    h4 {
+      color: $gold;
+    }
+    p {
+      color: white;
+      font-weight: 200;
+    }
+    .item {
+      .price {
+        color: $gold;
+        font-weight: 100;
+        font-size: 2em;
+      }
+      img {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .cards {
+    flex: 1 1 40%;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    .card {
+      max-width: 130%;
+      height: 120%;
+      background-color: rgb(231, 231, 231);
+      text-align: center;
+      padding: 0 50px;
+      outline: 1px dashed $darkgrey;
+      outline-offset: -11px;
+    }
+    .est {
+      grid-template: auto auto / 1fr 1fr;
+      text-align: center;
       justify-content: center;
-      i {
-        font-size: 0.8em;
-        margin: 7px 30px;
-        color: rgba(255, 255, 255, 0.9);
+      margin: 50px 0;
+      h4 {
+        margin: 0;
+        color: $darkgrey;
+      }
+      img {
+        grid-column: span 2;
+        width: 100%;
+      }
+    }
+    h2 {
+      margin-bottom: 30px;
+    }
+    p {
+      line-height: 27px;
+      margin-bottom: 30px;
+    }
+    a {
+      border: 1px solid $darkgrey;
+      padding: 10px 60px;
+      color: goldenrod;
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+section.sandwich {
+  text-align: center;
+  .farm {
+    background: url("../img/Vektor-Smartobjekt.png") no-repeat;
+    background-position: bottom center;
+    background-size: 50%;
+    padding-top: 90px;
+    h2 {
+    }
+  }
+}
+
+footer {
+  ul {
+    padding: 0;
+    list-style: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9em;
+    li {
+      @include alegreya;
+      margin: 0 20px;
+      a {
+        color: $darkgrey;
+        text-decoration: none;
       }
     }
   }
