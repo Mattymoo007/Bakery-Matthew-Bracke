@@ -250,7 +250,6 @@ section.recipe {
   align-items: center;
 
   .card {
-    grid-template: 1fr / 7fr 1fr;
     margin: 130px 0 100px 0;
     .shadow {
       box-shadow: 0px 5px 31px 0px rgba(0, 0, 0, 0.75);
@@ -270,7 +269,7 @@ section.recipe {
         background: url("../img/Vektor-Smartobjekt\ windmill.png") no-repeat;
         background-color: #fff;
         background-position: right bottom;
-        background-size: 40% 70%;
+        background-size: 50% 70%;
         padding: 60px 50px 40px;
       }
       .ingridients {
@@ -426,14 +425,12 @@ section.sandwich {
     background-position: bottom center;
     background-size: 50%;
     padding-top: 90px;
-    h2 {
-    }
   }
   .ingridients {
     flex: 35%;
     padding: 0 80px 0 0;
     h3 {
-      color:goldenrod;
+      color: goldenrod;
       margin: 10px 0;
     }
     p {
