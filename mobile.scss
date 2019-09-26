@@ -3,7 +3,7 @@
     font-size: 2.6rem;
   }
   .container-2 {
-    width: 75vw;
+    width: 85vw;
   }
   header {
     nav {
@@ -35,14 +35,19 @@
       .photos {
         margin: 60px 0 40px;
         padding: 0;
+        .stamp {
+          img {
+            width: 250px;
+          }
+          h2 {
+            top: 32%;
+          }
+        }
       }
     }
   }
   section.recipe {
     padding-top: 40px;
-    .container-2 {
-      width: 80vw;
-    }
     .card {
       .shadow {
         flex-direction: column;
@@ -54,7 +59,10 @@
         }
         .ingridients {
           img {
-            width: 80px;
+            width: 70px;
+            &:nth-child(3) {
+              display: none;
+            }
           }
         }
         .time {
@@ -62,8 +70,8 @@
             outline: 3px solid rgba(255, 255, 255, 0.95);
             outline-offset: 4px;
             background-color: rgba(255, 255, 255, 0.95);
-            left: 32%;
-            top: -950px;
+            left: 29%;
+            top: -1040px;
           }
         }
       }
@@ -79,6 +87,10 @@
     }
   }
   section.sandwich {
+    .farm {
+      background-size: 80%;
+      padding: 50px 20px 0;
+    }
     .container {
       flex-direction: column;
       .ingridients {
@@ -86,10 +98,10 @@
         padding: 20px 20px 0;
       }
       .prep {
-        font-size: 0.9rem;
+        font-size: 0.6rem;
         .mini-card {
-          width: 120px;
-          height: 120px;
+          width: 90px;
+          height: 90px;
         }
       }
     }
@@ -102,6 +114,8 @@
       }
       ul {
         border-top: none;
+        display: block;
+        text-align: center;
       }
     }
   }
@@ -109,6 +123,5 @@
 
 @media only screen and (max-width: 480px) {
   body {
-    background-color: lightblue;
   }
 }
